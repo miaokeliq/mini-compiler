@@ -71,5 +71,49 @@ function tokenizer(input) {
       tokens.push({ type: "number", value });
       continue;
     }
+
+    // 判断字符串， 字符串一般是被双引号("")包裹的，所以可以根据双引号来判断
+    if (char === '"') {
+      let value = "";
+
+      // 跳过双引号,去取出里面的字符串
+      current++;
+      char = input[current];
+      while (char !== '"') {
+        value += char;
+        current++;
+        char = input[current];
+      }
+
+      // 跳过结尾双引号
+      char = input[++current];
+
+      // 将解析出来的字符串放入 Tokens 数组
+      tokens.push({ type: "string", value });
+
+      continue;
+    }
+
+    // 最后一种类型是 iisp 中的函数名称语法， 是一连串的字母而不是数字
+    let LETTERS = /[a-z]/i;
+    if (LETTERS.test(char)) {
+      let value = "";
+
+      while (LETTERS.test(char)) {
+        value += char;
+        current++;
+        char = input[current];
+      }
+
+      tokens.push({ type: "name", value });
+
+      continue;
+    }
+
+    // 最后如果还没有匹配到当前字符，则抛出一个错误.
+    throw new TypeError("I don't know what this character is:" + char);
   }
+  return tokens;
 }
+
+module.exports = tokenizer;

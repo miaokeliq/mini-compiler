@@ -1,0 +1,28 @@
+{
+  "name": "super-tiny-compiler",
+  "version": "0.0.1",
+  "description": "大多数的编译器分为三个主要阶段： **解析**（Parsing）、 **转换**（Transformation）、 **代码生成**（Code Generation）。",
+  "main": "compiler.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/miaokeliq/the-super-tiny-compiler-demo.git"
+  },
+  "keywords": [
+    "compiler"
+  ],
+  "author": "Ian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miaokeliq/the-super-tiny-compiler-demo/issues"
+  },
+  "homepage": "https://github.com/miaokeliq/the-super-tiny-compiler-demo#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
