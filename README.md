@@ -1,5 +1,9 @@
 # The super tiny compiler demo
 
+```
+TDD开发  主文件：compiler.js
+```
+
 大多数的编译器分为三个主要阶段： **解析**（Parsing）、 **转换**（Transformation）、 **代码生成**（Code Generation）。
 
 1. `Parsing`： 解析是将原始代码(raw code)转换成更抽象的代码的表示(representation of code).
