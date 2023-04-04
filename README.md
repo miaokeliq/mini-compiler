@@ -1,4 +1,4 @@
-# The super tiny compiler demo
+# mini-compiler
 
 ```
 TDD开发  主文件：compiler.js
